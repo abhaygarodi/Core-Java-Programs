@@ -1,14 +1,24 @@
-public class Employee extends Member{
-    String specialisation;
+public class Employee extends Person{
+	private int empid;
+	private double salary;
 
-	public Employee(String name, int age, long pno, String addr, double salary, String specialisation){
-		super(name, age, pno, addr, salary);
-		this.specialisation = specialisation;
-		}
+	public Employee(String name, int age, int empid, double salary){
+		super(name, age);
+		this.empid = empid;
+		this.salary = salary;
+	}
 
-		@Override
-		public void getDetail(){
-			super.getDetail();
-			System.out.println("Specialisation : "+specialisation);
-	}	
+	public int getId(){
+		return empid;
+	}
+
+	public double getSalary(){
+		return salary;
+	}
+
+	public void getDetail(){
+		super.getDetail();
+		System.out.println("ID : "+empid);
+		System.out.println("Salary : "+salary);
+	}
 }
